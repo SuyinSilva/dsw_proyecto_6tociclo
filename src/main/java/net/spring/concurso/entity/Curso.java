@@ -33,14 +33,18 @@ public class Curso implements Serializable{
 	@Column(name = "estado")
 	private String estado;
 	
+	@Column(name = "precio")
+	private double precio;
+	
 
 	//relación muchos "Curso" a uno "SistemaEvaluacion"
 	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne //(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idSistemaEvaluacion")
-	private SistemaEvaluacion sistemaevaluacion;//ASOCIACIÖN.
+	@JoinColumn(name = "idTipoCarrera")
+	private TipoCarrera tipocarrera;//ASOCIACIÖN.
 
 
+	
 	
 	public int getCodigoCurso() {
 		return codigoCurso;
@@ -82,19 +86,24 @@ public class Curso implements Serializable{
 	}
 
 
-	public SistemaEvaluacion getSistemaevaluacion() {
-		return sistemaevaluacion;
+	public double getPrecio() {
+		return precio;
 	}
 
 
-	public void setSistemaevaluacion(SistemaEvaluacion sistemaevaluacion) {
-		this.sistemaevaluacion = sistemaevaluacion;
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
 
-	
-	
-	
-	
+
+	public TipoCarrera getTipocarrera() {
+		return tipocarrera;
+	}
+
+
+	public void setTipocarrera(TipoCarrera tipocarrera) {
+		this.tipocarrera = tipocarrera;
+	}
 	
 	
 }

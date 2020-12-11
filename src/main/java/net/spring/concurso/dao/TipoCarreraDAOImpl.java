@@ -9,21 +9,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import net.spring.concurso.entity.SistemaEvaluacion;
+import net.spring.concurso.entity.TipoCarrera;
 
 @Repository
-public class SistemaEvaluacionDAOImpl implements SistemaEvaluacionDAO{
+public class TipoCarreraDAOImpl implements TipoCarreraDAO{
 	
 	@Autowired
 	private SessionFactory factory;
 	
 	@Transactional(readOnly = true)
 	@Override
-	public List<SistemaEvaluacion> listAll() {
+	public List<TipoCarrera> listAll() {
 		Session session=factory.getCurrentSession();
 		Query query=null;
 		try {
-			String hql="select s from SistemaEvaluacion s";
+			String hql="select t from TipoCarrera t";
 			query=session.createQuery(hql);
 		} catch (Exception e) {
 			e.printStackTrace();

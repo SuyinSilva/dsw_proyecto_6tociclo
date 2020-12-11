@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.spring.concurso.entity.Curso;
-import net.spring.concurso.entity.SistemaEvaluacion;
+import net.spring.concurso.entity.TipoCarrera;
 import net.spring.concurso.service.CursoService;
-import net.spring.concurso.service.SistemaEvaluacionService;
+import net.spring.concurso.service.TipoCarreraService;
 
 @RestController
 @RequestMapping(value = "/curso")
@@ -25,13 +25,13 @@ public class CursoController {
 	private CursoService cursoService;
 	
 	@Autowired
-	private SistemaEvaluacionService sistemaevaluacionService;
+	private TipoCarreraService tipocarreraService;
 
 	//select marca > a una fila
-	@GetMapping(path = "/listAllSistemaEvaluacion")
+	@GetMapping(path = "/listAllTipoCarrera")
 	@ResponseBody
-	public List<SistemaEvaluacion> listAllSistemaEvaluacion(){
-		return sistemaevaluacionService.listAll();
+	public List<TipoCarrera> listAllTipoCarrera(){
+		return tipocarreraService.listAll();
 	}
 	//select computadora > a una fila
 	@GetMapping(path = "/listAllCurso")

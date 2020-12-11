@@ -12,38 +12,38 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "sistemaevaluacion")
-public class SistemaEvaluacion implements Serializable{
+@Table(name = "tipocarrera")
+public class TipoCarrera implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idSistemaEvaluacion")
-	private int sisEvaluacion;
+	@Column(name = "idTipoCarrera")
+	private int tipCarrera;
 	
 	@Column(name = "nombre")
-	private String nombreSistemae;
+	private String nombreTipoc;
 	
 	@JsonIgnore
 	//relación uno "Marca" a muchos "Computadora"
-	@OneToMany(mappedBy = "sistemaevaluacion")
+	@OneToMany(mappedBy = "tipocarrera")
 	private List<Curso> listaCursos;
-
 	
 	
-	public int getSisEvaluacion() {
-		return sisEvaluacion;
+
+	public int getTipCarrera() {
+		return tipCarrera;
 	}
 
-	public void setSisEvaluacion(int sisEvaluacion) {
-		this.sisEvaluacion = sisEvaluacion;
+	public void setTipCarrera(int tipCarrera) {
+		this.tipCarrera = tipCarrera;
 	}
 
-	public String getNombreSistemae() {
-		return nombreSistemae;
+	public String getNombreTipoc() {
+		return nombreTipoc;
 	}
 
-	public void setNombreSistemae(String nombreSistemae) {
-		this.nombreSistemae = nombreSistemae;
+	public void setNombreTipoc(String nombreTipoc) {
+		this.nombreTipoc = nombreTipoc;
 	}
 
 	public List<Curso> getListaCursos() {
@@ -54,13 +54,5 @@ public class SistemaEvaluacion implements Serializable{
 		this.listaCursos = listaCursos;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
