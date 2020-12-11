@@ -79,5 +79,4 @@ public class EditorialDAOImpl implements EditorialDAO{
 	}
 	
 	
-
 }

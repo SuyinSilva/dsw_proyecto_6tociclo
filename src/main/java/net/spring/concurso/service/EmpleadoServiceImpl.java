@@ -3,7 +3,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import net.spring.concurso.dao.EmpleadoDAO;
-import net.spring.concurso.entity.Editorial;
 import net.spring.concurso.entity.Empleado;
 
 @Service

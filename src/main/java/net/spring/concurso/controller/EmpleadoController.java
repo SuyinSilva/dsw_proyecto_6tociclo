@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import net.spring.concurso.entity.Distrito;
 import net.spring.concurso.entity.Empleado;
 import net.spring.concurso.entity.TipoEmpleado;
+import net.spring.concurso.service.DistritoService;
 import net.spring.concurso.service.EmpleadoService;
 import net.spring.concurso.service.TipoEmpleadoService;
 
@@ -25,7 +28,16 @@ public class EmpleadoController {
 	
 	@Autowired
 	private TipoEmpleadoService tipoEmpleadoService;
+	
+	@Autowired
+	private DistritoService distritoService;
 
+	
+	@GetMapping(path = "/listAllDistrito")
+	@ResponseBody
+	public List<Distrito> listAllDistrito(){
+		return distritoService.listAll();
+	}
 	//select Pais > a una fila
 	@GetMapping(path = "/listAllTipoEmpleado")
 	@ResponseBody

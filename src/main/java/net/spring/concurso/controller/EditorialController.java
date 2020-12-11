@@ -61,6 +61,7 @@ public class EditorialController {
 		editorialService.delete(cod);
 	}
 	
+	
 }
 
 

@@ -34,6 +34,4 @@ public class EditorialServiceImpl implements EditorialService{
 	public List<Editorial> listAll() {
 		return editorialDAO.listAll();
 	}
-
-
 }
