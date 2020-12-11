@@ -10,11 +10,13 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_usu")
 	private int codUsuario;
+	@Column(name="login")
 	private String login;
+	@Column(name="password")
 	private String password;
 
 	@ManyToOne
-	@JoinColumn(name="idRol")
+	@JoinColumn(name="idrol")
 	private Rol rol;
 	
 	@ManyToOne
